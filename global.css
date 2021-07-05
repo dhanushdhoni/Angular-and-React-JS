@@ -57,10 +57,10 @@ section {
 textarea {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   width: 32%;
-  min-height: 150px;
+  min-height: 200px;
   margin: 15px 2% 0 0;
   float: left;
-  font-size: 10pt;
+  font-size: 14pt;
   line-height: 14pt;
   font-weight: 200;
   padding: 10px;
