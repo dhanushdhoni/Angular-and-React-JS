@@ -62,13 +62,13 @@ textarea {
   float: left;
   font-size: 14pt;
   line-height: 14pt;
-  font-weight: 200;
+  font-weight: 400;
   padding: 10px;
-  color: #333;
+  color: #000000;
   border: 1px solid #cdcdcd;
-  background: #fff;
+  background: #ffffff;
   box-shadow: inset rgba(0,0,0,.05) 0 3px 10px;
-  border-radius: 3px;
+  border-radius: 5px;
   transition: all 0.2s ease-in-out;
   appearance: none;
   -moz-appearance: none;
