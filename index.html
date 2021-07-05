@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Site Information -->
+  <meta charset="utf-8" />
+  <title>AngularJS Compiler</title>
+
+  <!-- Cascading Style Sheets -->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href="global.css" rel="stylesheet">
+
+  <!-- JavaScript -->
+  <script src="jquery.min.js" type="text/javascript"></script>
+  <script src="editor.js" type="text/javascript"></script>
+
+  <!-- Mobile Settings -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+
+</head>
+
+<body>
+  <section>
+	<h1>Angular JS Compiler</h1>
+	<br>
+	
+	<div class="question-block">
+		<h4>  Problem 1</h4>
+		<p>   Write a html code to print something and use css to change the color of it<br>Make a dialoge box of text 'hi" to appear</p>
+	</div>
+	<br>
+	<div class="header">
+		<button class="button" onclick="compile();">Run</button>
+		<button class="button" onclick="remove();" title="Kindly Delete After each Compilation">Delete Output</button>
+		<button class="button" type="button" id="save" title="Save as text file" onclick="enterName()">Save</button>
+		<button class="clearLink" href="#" title="Click to clear all">Clear</button>
+	</div>
+	
+	<h3> You can code fully in HTML text area or Seperately in each text area</h3>
+	
+    <textarea id="html" value="" placeholder="HTML" autocapitalize="off" autofocus></textarea>
+    <textarea id="css" value="" placeholder="CSS" autocapitalize="off"></textarea>
+    <textarea id="js" value="" placeholder="JS or Angular JS" autocapitalize="off"></textarea>
+	
+	
+  </section>
+  
+  
+ <script type="text/javascript">
+ //enter file name..................................
+ var txt;
+ function enterName() 
+ {
+  var filename = prompt("Please enter your file name :", "filename.html");
+  if (filename == null || filename == "") {
+    txt = "defaultname.html";
+  } else {
+    txt = filename;
+	saveTextAsFile();
+  }
+  
+}
+ //download file....................................
+function saveTextAsFile()
+{
+	var csstxt = document.getElementById("css").value;
+	var jstxt = document.getElementById("js").value;
+	var htmltxt = document.getElementById("html").value;
+    var textToSave = "<htm"+"l>\n"+htmltxt +"\n<style>\n"+csstxt+"\n</style>"+"\n<Scri"+"pt>\n"+jstxt+"\n</scri"+"pt>\n"+"</htm"+"l>\n";
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = txt;
+ 
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+ 
+    downloadLink.click();
+}
+ 
+function destroyClickedElement(event)
+{
+    document.body.removeChild(event.target);
+}
+ 
+/*function loadFileAsText()
+{
+    var fileToLoad = document.getElementById("fileToLoad").files[0];
+ 
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) 
+    {
+        var textFromFileLoaded = fileLoadedEvent.target.result;
+        document.getElementById("inputTextToSave").value = textFromFileLoaded;
+    };
+    fileReader.readAsText(fileToLoad, "UTF-8");
+} */
+ 
+</script>
+</body>
+</html>
