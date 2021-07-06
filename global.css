@@ -72,6 +72,7 @@ textarea {
   transition: all 0.2s ease-in-out;
   appearance: none;
   resize : none;
+  overflow: scroll;
   white-space: nowrap;
   -moz-appearance: none;
   -webkit-appearance: none;
