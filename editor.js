@@ -13,7 +13,7 @@ function compile() {
 	document.body.appendChild(newIframe);
 	
 	newIframe.contentWindow.document.open('text/html', 'replace');
-	newIframe.contentWindow.document.write(html.value+"<style>"+css.value+"</style>"+"<script>" + js.value + "</script>");
+	newIframe.contentWindow.document.write(html.value+"<style>"+css.value+"</style>"+"<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'>" + js.value + "</script>");
 	newIframe.contentWindow.document.close();
     }
 function remove(){
