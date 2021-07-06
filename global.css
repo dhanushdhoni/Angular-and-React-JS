@@ -56,7 +56,7 @@ section {
 
 textarea {
   font-family: "Consolas";
-  min-width: 24%;
+  min-width: 49%;
   min-height: 300px;
   margin: 15px 2% 0 0;
   float: left;
@@ -77,13 +77,6 @@ textarea {
 
 textarea:focus {
   border-color: #33dd33;
-}
-
-textarea#js {
-  margin: 15px 0 0 0;
-}
-textarea#rjs {
-  margin: 15px 0 0 0;
 }
 
 iframe {
