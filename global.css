@@ -21,9 +21,9 @@ body {
 h1 {
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
-  color: #777;
+  color: #000000;
   margin: 0;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 section {
@@ -133,8 +133,8 @@ iframe {
 .header {
   padding: 20px;
   text-align: left-side;
-  background: #1abc9c;
-  color: white;
+  background: #000000;
+  color: black;
   font-size: 30px;
 }
 
