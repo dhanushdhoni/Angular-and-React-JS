@@ -71,6 +71,7 @@ textarea {
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
   appearance: none;
+  resize : none;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
