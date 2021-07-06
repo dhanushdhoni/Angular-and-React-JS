@@ -26,12 +26,6 @@
   <section>
 	<h1>Angular JS Compiler</h1>
 	<br>
-	
-	<div class="question-block">
-		<h4>  Problem 1</h4>
-		<p>   Write a html code to print something and use css to change the color of it<br>Make a dialoge box of text 'hi" to appear</p>
-	</div>
-	<br>
 	<div class="header">
 		<button class="button" onclick="compile();">Run</button>
 		<button class="button" onclick="remove();" title="Kindly Delete After each Compilation">Delete Output</button>
@@ -44,6 +38,7 @@
     <textarea id="html" value="" placeholder="HTML" autocapitalize="off" autofocus></textarea>
     <textarea id="css" value="" placeholder="CSS" autocapitalize="off"></textarea>
     <textarea id="js" value="" placeholder="JS or Angular JS" autocapitalize="off"></textarea>
+    <textarea id="rjs" value="" placeholder="React JS" autocapitalize="off"></textarea>
 	
 	
   </section>
@@ -69,7 +64,8 @@ function saveTextAsFile()
 	var csstxt = document.getElementById("css").value;
 	var jstxt = document.getElementById("js").value;
 	var htmltxt = document.getElementById("html").value;
-    var textToSave = "<htm"+"l>\n"+htmltxt +"\n<style>\n"+csstxt+"\n</style>"+"\n<Scri"+"pt>\n"+jstxt+"\n</scri"+"pt>\n"+"</htm"+"l>\n";
+	var rjs = document.getElementById("rjs").value;
+    var textToSave = "<htm"+"l>\n"+htmltxt +"\n<style>\n"+csstxt+"\n</style>"+"\n<Scri"+"pt>\n"+jstxt+"\n</scri"+"pt>\n"+"</htm"+"l>\n"+'<script type = "text/babel">'+rjs+'</script>';
     var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
     var fileNameToSaveAs = txt;
