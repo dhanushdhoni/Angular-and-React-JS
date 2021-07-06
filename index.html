@@ -62,10 +62,12 @@
 function saveTextAsFile()
 {
 	var csstxt = document.getElementById("css").value;
-	var jstxt = document.getElementById("js").value;
+	var jstxt = document.getElementById("js").value;=
 	var htmltxt = document.getElementById("html").value;
 	var rjs = document.getElementById("rjs").value;
-    var textToSave = "<htm"+"l>\n"+htmltxt +"\n<style>\n"+csstxt+"\n</style>"+"\n<Scri"+"pt>\n"+jstxt+"\n</scri"+"pt>\n"+"</htm"+"l>\n"+'<script type = "text/babel">'+rjs+'</script>';
+	var val = "<sc"+"ript type = 'text/babel'>";
+	var val2 = "</scri"+"pt>";
+    var textToSave = "<htm"+"l>\n"+htmltxt +"\n<style>\n"+csstxt+"\n</style>"+"\n<Scri"+"pt>\n"+jstxt+"\n</scri"+"pt>\n"+"</htm"+"l>\n"+val+val2;
     var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
     var fileNameToSaveAs = txt;
