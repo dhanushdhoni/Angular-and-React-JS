@@ -47,6 +47,8 @@ $(document).ready(function(){
   $("#html").html(sessionStorage["html"]);
   $("#css").html(sessionStorage["css"]);
   $("#js").html(sessionStorage["js"]);
+   $("#rjs").html(sessionStorage["rjs"]);
+	
   function init() {
     if (sessionStorage["html"]) {
         $("#html").val(sessionStorage["html"]);
@@ -57,6 +59,9 @@ $(document).ready(function(){
     if (sessionStorage["js"]) {
         $("#js").val(sessionStorage["js"]);
       }
+    if (sessionStorage["rjs"]) {
+        $("#rjs").val(sessionStorage["rjs"]);
+      }
   };
 
   // Clear textareas with button
@@ -65,7 +70,7 @@ $(document).ready(function(){
   function clearAll(){
     document.getElementById("html").value = "";
     document.getElementById("css").value = "";
-    document.getElementById("js").value = "";
+    document.getElementById("js").value = "";document.getElementById("rjs").value = "";
     sessionStorage.clear();
   }
 
