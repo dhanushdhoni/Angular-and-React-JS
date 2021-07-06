@@ -4,7 +4,6 @@ function compile() {
 	var css = document.getElementById("css");
 	var js = document.getElementById("js");
 	var rjs = document.getElementById("rjs");
-	var Ascr = "<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>";
 	
 	
 	var newIframe = document.createElement('iframe');
@@ -15,7 +14,8 @@ function compile() {
 	document.body.appendChild(newIframe);
 	
 	newIframe.contentWindow.document.open('text/html', 'replace');
-	newIframe.contentWindow.document.write(html.value+"<style>"+css.value+"</style>"+"<script>" + js.value + "</script>"+"<script type = 'text/babel'>" + rjs.value + "</script>"+Ascr);
+	newIframe.contentWindow.document.write("<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>");
+	newIframe.contentWindow.document.write(html.value+"<style>"+css.value+"</style>"+"<script>" + js.value + "</script>"+"<script type = 'text/babel'>" + rjs.value + "</script>");
 	newIframe.contentWindow.document.write('<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>\n'+'<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>'+'\n<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>\n');
 	newIframe.contentWindow.document.close();
     }
